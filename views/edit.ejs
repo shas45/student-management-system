@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit</title>
+</head>
+<body>
+    <h1>  Edit Your Details: <%= student.id %></h1>
+    <form action="/home/<%= student._id %>/update" method="post">
+        
+        <label>Name</label>
+        <input type="text" name="name" value="<%= student.name %>" required>
+        <br>
+        <label>Roll No</label>
+        <input type="text" name="rollNo" value="<%= student.rollNo %>" required>
+        <br>
+        <label>Email</label>
+        <input type="email" name="email" value="<%= student.email %>" required>
+        <br>
+        <label>Course</label>
+        <input type="text" name="course" value="<%= student.course %>" required>
+        <br>
+        <label>Semester</label>
+        <input type="number" name="semester" value="<%= student.semester %>" required>
+        <br>
+        <label>Phone No</label>
+        <input type="number" name="phoneNo" value="<%= student.phoneNo %>" required>
+        <br>
+        <button type="submit">Update Student</button>
+
+    </form>
+
+</body>
+</html>

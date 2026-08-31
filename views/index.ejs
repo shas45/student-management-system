@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is home page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Student Management System</h1>
+    <div class="top">
+    <form action="/home/new" method="get"><button>Add student</button></form>
+
+    <form action="/search">
+        <input placeholder="Search student..." type="text" name="search" class="search">
+        <button type="submit">Search</button>
+
+    </form>
+    </div>
+     <hr>
+
+     <div class="student">
+        <table >
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Roll No</th>
+                    <th>Email</th>
+                    <th>Course</th>
+                    <th>Semester</th>
+                    <th>Phone No</th>
+                    <th>Action</th>
+            </tr>
+
+            </thead>
+            <tbody>
+                <% for( let student of allStudents) { %>
+
+                    <tr>
+                <td><%= student.name %></td>
+                <td><%= student.rollNo %></td>
+                <td><%= student.email %></td>
+                <td><%= student.course %></td>
+                <td><%= student.semester %></td>
+                <td><%= student.phoneNo %></td>
+
+                <td>
+                    <form action="/home/<%= student._id %>/edit" method="get"><button>Edit Student</button></form>  
+                   <form action="/home/<%= student._id %>/delete" method="post"><button>Delete Student</button></form> 
+                </td>
+            </tr>
+            <% } %>
+            </tbody>
+        </table>
+       
+     </div>
+
+</body>
+</html>
